@@ -1,10 +1,7 @@
 'use strict'
 
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
-
-// use require without a reference to ensure a file is bundled
-// require('./example')
+const events = require('./authorization/events.js')
+const gevents = require('./inventory-management/ievents.js')
 
 $(() => {
   // authorization actions
@@ -16,4 +13,6 @@ $(() => {
   $('#new-item').on('submit', gevents.onNewItem)
   $('#update-item').on('submit', gevents.onUpdateItem)
   $('#delete-item').on('submit', gevents.onRemoveItem)
+  // inventory summary actions
+  gevents.loadInventory
 })
