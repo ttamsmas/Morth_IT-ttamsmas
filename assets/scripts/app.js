@@ -7,6 +7,7 @@
 // require('./example')
 
 $(() => {
+  // authorization actions
   $('#sign-up-form').on('submit', events.onSignUp)
   $('#sign-in-form').on('submit', events.onSignIn)
   $('#change-password-form').on('submit', events.onUpdatePassword)
