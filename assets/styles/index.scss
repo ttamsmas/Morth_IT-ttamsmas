@@ -1,1 +1,69 @@
 @import '~bootstrap/scss/bootstrap';
+
+$alt-color: $cyan;
+$bg-color: #c5fcdb;
+$font-color: #FFFFFF;
+$border-color: 1px #000000 double;
+$font-outline: #000000;
+$cell-dimensions: 98vw;
+$text-shadow: -1px -1px 0 $font-outline, 1px -1px 0  $font-outline, -1px 1px 0  $font-outline, 1px 1px 0  $font-outline;
+$alt-border: 3px #2dba86 ridge;
+$alt-bg-color: #e1f7ef;
+
+body  {
+  border: 1px black solid;
+}
+
+h1  {
+  color: $font-color;
+  text-align: center;
+  text-shadow: $text-shadow;
+}
+
+.inventorySummary {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  align-items: space-around;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.singleItem {
+  display: flex;
+  align-content: baseline;
+  background: $bg-color;
+  border: $border-color;
+  color: black;
+  width: $cell-dimensions;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+#title {
+  border-bottom: $border-color;
+}
+
+#communication {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#FormFields {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin: 0 5vw 0 5vw;
+}

@@ -12,6 +12,104 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1 id="title">Morth Inventory Tracking</h1>
+      <div id="FormFields">
+        <section>
+          <form id="sign-up-form">
+            <fieldset>
+              <legend>Create New Account</legend>
+              <label for="sign-up-email">Email</label>
+              <input id="sign-up-email" type="email" name="credentials[email]" placeholder="Email">
+              <label for="sign-up-password">Password</label>
+              <input id="sign-up-password" type="password" name="credentials[password]" placeholder="Password">
+              <label for="sign-up-password_confirmation">Confirm Password</label>
+              <input id="sign-up-password_confirmmation" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+              <input type="submit" value="Create">
+            </fieldset>
+          </form>
+        </section>
+        <section>
+          <form id="sign-in-form">
+            <fieldset>
+              <legend>Sign In</legend>
+              <label for="sign-in-email">Email</label>
+              <input id="sign-in-email" type="email" name="credentials[email]" placeholder="Email">
+              <label for="sign-in-password">Password</label>
+              <input id="sign-in-password" type="password" name="credentials[password]" placeholder="Password">
+              <input type="submit" value="Sign in!">
+            </fieldset>
+          </form>
+        </section>
+        <section>
+          <form id="change-password-form" style="display: none">
+            <fieldset>
+              <legend>Change Password</legend>
+              <label for="old-password">Old Password</label>
+              <input id="old-password" type="password" name="passwords[old]" placeholder="Password">
+              <label for="new-password_confirmmation">New Password</label>
+              <input id="new-password_confirmmation" type="password" name="passwords[new]" placeholder="New Password">
+              <input type="submit" value="Change Password!">
+            </fieldset>
+          </form>
+        </section>
+        <section>
+          <form id="sign-out-form" style="display: none">
+            <fieldset>
+              <input type="submit" value="Sign-Out">
+            </fieldset>
+          </form>
+        </section>
+        <section>
+          <form id="new-game" style="display: none">
+            <fieldset>
+              <input type="submit" value="New Game">
+            </fieldset>
+          </form>
+        </section>
+        <section>
+          <form id="player-stats" style="display: none">
+            <fieldset>
+              <input type="submit" value="Player Stats">
+            </fieldset>
+          </form>
+        </section>
+      </div>
+      <div id="communication">
+        <h2 id="masterLog"></h2>
+        <p id="secondLog"></p>
+      </div>
+      <section>
+        <div class='inventory'>
+          <h1>On Hand Inventory</h1>
+          <form>
+            <fieldset>
+              <legend>Create New Inventory Item</legend>
+              <input id="new-item-name" type="string" name="items[name]" placeholder="Item Name">
+              <input id="new-item-department" type="string" name="items[department]" placeholder="Department">
+              <input id="new-item-quantity" type="number" name="items[quantity]" placeholder="qty">
+              <input id="new-item-cost" type="number" name="items[cost]" placeholder="Cost per Unit">
+              <input type="submit" value="Create">
+            </fieldset>
+        <div class='inventorySummary'>
+          <div>
+            <div class='container'>
+              <div class='singleItem'>
+                <p class="singleItemName">singleItemName</p>
+                <p class="singleItemDepartment">singleItemDepartment</p>
+                <p class="singleItemQuantity">singleItemQuantity</p>
+                <p class="singleItemCost">singleItemCost</p>
+                <p class="singleItemPrice">singleItemPrice</p>
+                <p class="singleItemCreator">singleItemCreator</p>
+                <p class="singleItemAge">singleItemAge</p>
+                <form>
+                  <input id="update-item-quantity" type="number" name="items[quantity]" placeholder="update qty">
+                  <input id="update-item" type="submit" value="Update">
+                  <input id="delete-item" type="submit" value="Delete">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </body>
 </html>
