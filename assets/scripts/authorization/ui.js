@@ -17,6 +17,8 @@ const signUpFailure = function () {
 
 const signInSuccess = function (response) {
   $('#message').text('Thanks for signing in! ' + response.user.email)
+  console.log(response)
+  // store the current session's owner and token to be used for other CRUD
   store.user = response.user
   $('#change-password-form').show()
   $('#sign-out-form').show()
@@ -56,6 +58,7 @@ const signOutSuccess = function (response) {
   $('#sign-up-password').val('')
   $('#sign-up-password_confirmation').val('')
   $('#inventory').hide()
+  // clear user
   delete store.user
 }
 

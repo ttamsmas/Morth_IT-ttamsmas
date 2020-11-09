@@ -11,8 +11,8 @@ $(() => {
   $('#sign-out-form').on('submit', events.onSignOut)
   // inventory actions
   $('#new-item').on('submit', gevents.onNewItem)
-  $('#update-item').on('submit', gevents.onUpdateItem)
-  $('#delete-item').on('submit', gevents.onRemoveItem)
-  // inventory summary actions
-  gevents.loadInventory
+  // $('#update-item').on('submit', gevents.onUpdateItem)
+  // $('#delete-item').on('submit', gevents.onRemoveItem)
+  // // inventory summary actions
+  // gevents.loadInventory
 })

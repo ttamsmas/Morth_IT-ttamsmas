@@ -25,6 +25,7 @@ const onSignIn = function (event) {
   const data = getFormFields(form)
   api.signIn(data)
     .then(ui.signInSuccess)
+    .then(console.log(event.target))
     .catch(ui.signInFailure)
 }
 
