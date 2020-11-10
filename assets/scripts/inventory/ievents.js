@@ -16,7 +16,7 @@ const onNewItem = function (event) {
   // console.log(data)
   iapi.newItem(data)
     .then(iui.newItemSuccess)
-    .then(iapi.loadItems(event))
+    .then(iapi.loadItems)
       .then(iui.loadInventorySuccess)
       .catch(iui.loadInventoryFailure)
     .catch(iui.newItemFailure)

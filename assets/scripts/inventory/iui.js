@@ -19,8 +19,9 @@ const newItemFailure = function (error) {
   $('#masterLog').text('New Item Failure, Try Again')
 }
 
-const loadInventorySuccess = function () {
+const loadInventorySuccess = function (response) {
   $('#masterLog').text('Inventory Refreshed')
+  console.log(response)
 }
 
 const loadInventoryFailure = function () {
