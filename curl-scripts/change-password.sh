@@ -17,4 +17,4 @@ curl "${API}${URL_PATH}" \
 
 echo
 
-# TOKEN=ff9a0b0ef9500431864c7d0fb6bd4a60 OLDPW=4 NEWPW=2 sh curl-scripts/change-password.sh
+# TOKEN=d4f189a85e20c5656a10e9762ba2bf4b OLDPW=2 NEWPW=3 sh curl-scripts/change-password.sh

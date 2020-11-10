@@ -1,7 +1,8 @@
 'use strict'
 
 const events = require('./authorization/events.js')
-const gevents = require('./inventory-management/ievents.js')
+const ievents = require('./inventory/ievents.js')
+const iapi = require('./inventory/iapi.js')
 
 $(() => {
   // authorization actions
@@ -10,9 +11,8 @@ $(() => {
   $('#change-password-form').on('submit', events.onUpdatePassword)
   $('#sign-out-form').on('submit', events.onSignOut)
   // inventory actions
-  $('#new-item').on('submit', gevents.onNewItem)
-  // $('#update-item').on('submit', gevents.onUpdateItem)
-  // $('#delete-item').on('submit', gevents.onRemoveItem)
-  // // inventory summary actions
-  // gevents.loadInventory
+  $('#new-item').on('submit', ievents.onNewItem)
+  $('#getAll').on('click', iapi.loadItems)
+  // $('#update-item').on('submit', ievents.onUpdateItem)
+  // $('#delete-item').on('submit', ievents.onRemoveItem)
 })

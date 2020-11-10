@@ -1,25 +1,26 @@
 'use strict'
 
 const store = require('../store.js')
+const inventoryRefresh = require('../inventory/inventory-refresh')
 
 const signUpSuccess = function (response) {
-  $('#message').text('You have Been Signed Up ' + response.user.email)
+  $('#masterLog').text('You have Been Signed Up ' + response.user.email)
   $('#sign-up-email').val('')
   $('#sign-up-password').val('')
   $('#sign-up-password_confirmmation').val('')
 }
 
 const signUpFailure = function () {
-  $('#message').text('Account Creation Failed, Please Try Again')
+  $('#masterLog').text('Account Creation Failed, Please Try Again')
   $('#sign-up-password').val('')
   $('#sign-up-password_confirmmation').val('')
 }
 
 const signInSuccess = function (response) {
-  $('#message').text('Thanks for signing in! ' + response.user.email)
-  console.log(response)
-  // store the current session's owner and token to be used for other CRUD
+  $('#masterLog').text('Thanks for signing in! ' + response.user.email)
+  // store the current session's owner to be used for other CRUD
   store.user = response.user
+  inventoryRefresh.loadInventory
   $('#change-password-form').show()
   $('#sign-out-form').show()
   $('#new-item').show()
@@ -28,26 +29,25 @@ const signInSuccess = function (response) {
   $('#sign-up-email').val('')
   $('#sign-up-password').val('')
   $('#sign-up-password_confirmmation').val('')
-  $('#inventory').show()
+  $('.inventoryFunctions').show()
 }
 
 const signInFailure = function () {
-  $('#message').text('Sign In Failed, Try Again')
+  $('#masterLog').text('Sign In Failed, Try Again')
 }
 
 const updateSucces = function () {
-  $('#message').text('Password Has Been Updated Successfully')
+  $('#masterLog').text('Password Has Been Updated Successfully')
   $('#old-password').val('')
   $('#new-password_confirmmation').val('')
 }
 
 const updateFail = function () {
-  $('#message').text('Update Password Failed, Please Try Again')
+  $('#masterLog').text('Update Password Failed, Please Try Again')
 }
 
 const signOutSuccess = function (response) {
-  $('#message').text('Sign Out Successful, Please Sign In Again To Play')
-  $('#masterLog').text('')
+  $('#masterLog').text('Sign Out Successful, Please Sign In to Continue')
   $('#change-password-form').hide()
   $('#sign-out-form').hide()
   $('#sign-in-form').show()
