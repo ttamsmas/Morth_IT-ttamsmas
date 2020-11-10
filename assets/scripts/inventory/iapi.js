@@ -4,8 +4,9 @@ const config = require('./../config')
 const store = require('../store')
 
 const newItem = function (data) {
+  console.log(data)
   return $.ajax({
-    url: config.apiUrl + '/item',
+    url: config.apiUrl + '/items',
     headers: {'Authorization': 'Bearer ' + store.user.token},    method: 'POST',
     data: data
   })
