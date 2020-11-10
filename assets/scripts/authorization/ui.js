@@ -1,7 +1,7 @@
 'use strict'
 
 const store = require('../store.js')
-const inventoryRefresh = require('../inventory/inventory-refresh')
+const iapi = require('../inventory/iapi')
 
 const signUpSuccess = function (response) {
   $('#masterLog').text('You have Been Signed Up ' + response.user.email)
@@ -18,9 +18,8 @@ const signUpFailure = function () {
 
 const signInSuccess = function (response) {
   $('#masterLog').text('Thanks for signing in! ' + response.user.email)
-  // store the current session's owner to be used for other CRUD
   store.user = response.user
-  inventoryRefresh.loadInventory
+  console.log(store)
   $('#change-password-form').show()
   $('#sign-out-form').show()
   $('#new-item').show()

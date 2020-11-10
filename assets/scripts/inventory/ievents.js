@@ -8,12 +8,14 @@ const store = require('./../store')
 // New Item Button pulls data from multiple input fields to create a new object and then appends it to the Items array
 const onNewItem = function (event) {
   event.preventDefault()
+  console.log(event)
   const form = event.target
   const data = getFormFields(form)
   console.log(data)
   data.items.owner = store.user
+  console.log(data)
   data.items.dateCreated = new Date()
-  // console.log(data)
+  console.log(data)
   iapi.newItem(data)
     .then(iui.newItemSuccess)
     .then(iapi.loadItems(event))

@@ -1,13 +1,12 @@
 'use strict'
 
 const config = require('./../config')
-const store = require('./../store.js')
+const store = require('../store')
 
 const newItem = function (data) {
   return $.ajax({
     url: config.apiUrl + '/item',
-    headers: {'Authorization': 'Bearer ' + store.user.token},
-    method: 'POST',
+    headers: {'Authorization': 'Bearer ' + store.user.token},    method: 'POST',
     data: data
   })
 }
@@ -31,7 +30,7 @@ const newItem = function (data) {
 //
 
 // AJAX Index / GET Request for item array
-const loadItems = function (data) {
+const loadItems = function () {
   return $.ajax({
     url: config.apiUrl + '/items',
     headers: {'Authorization': 'Bearer ' + store.user.token},

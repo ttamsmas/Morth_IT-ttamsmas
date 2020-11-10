@@ -27,7 +27,7 @@ const onSignIn = function (event) {
   const data = getFormFields(form)
   api.signIn(data)
     .then(ui.signInSuccess)
-    .then(iapi.loadItems(event))
+    .then(iapi.loadItems)
       .then(iui.loadInventorySuccess)
       .catch(iui.loadInventoryFailure)
     .catch(ui.signInFailure)
