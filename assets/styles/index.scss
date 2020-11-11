@@ -15,37 +15,57 @@ body  {
 }
 
 h1  {
+  margin: 0 auto;
+  padding: 0 auto;
   color: $font-color;
   text-align: center;
   text-shadow: $text-shadow;
 }
 
-.inventorySummary {
-  display: flex;
-  flex-flow: column;
-  align-items: flex-start;
-  margin: 0 auto;
+div {
+  width: 100vw;
 }
 
 .container {
   display: flex;
-  align-items: space-around;
+  align-content: stretch;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+.inventorySummary {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+.inventoryFunctions {
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+  margin: 0 auto;
+  padding: 0 auto;
+  width: 100%;
 }
 
 .singleItem {
   display: flex;
-  align-content: baseline;
   background: $bg-color;
   border: $border-color;
   color: black;
-  width: $cell-dimensions;
-  justify-content: space-around;
-  align-items: center;
   margin: 0 auto;
+  padding: 0 auto;
+  width: 100%;
+  align-items: center;
   text-align: center;
-  flex-direction: row;
+  flex-direction: row-reverse;
+  align-content: center;
+  justify-content: space-around;
   flex-wrap: nowrap;
 }
 
@@ -65,5 +85,5 @@ h1  {
   flex-flow: column;
   justify-content: flex-end;
   align-items: flex-end;
-  margin: 0 5vw 0 5vw;
+  width: $cell-dimensions;
 }
