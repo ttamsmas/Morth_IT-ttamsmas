@@ -21,7 +21,33 @@ const newItemFailure = function (error) {
 
 const loadInventorySuccess = function (response) {
   $('#masterLog').text('Inventory Refreshed')
-  console.log(response)
+
+// you have created an item or signed in and are getting a response array from the server
+// goal is to visualize the array as objects that can be manipulated by class
+// I think I can create a loop that adds divs within the container for each item in the array
+// How to include update and delete TBD
+console.log(response)
+
+// create objects for each item in the response array
+  response => {
+    for (let i = 0; i < response.length; i++) {
+      const singleObject = response[i]
+      console.log(singleObject)
+      // define the clone unique id
+      const currentClone = 'clone' + i
+      console.log(currentClone)
+      // clone the single item div so the formatting is consistand and update/delete buttons are already there
+      const mainContainer = $('.container')
+      $('.singleItem').clone().prop('id', currentClone).appendTo(mainContainer)
+      $('p:nth-last-child(1)').html(singleObject[0])
+      $('p:nth-last-child(2)').html(singleObject[1])
+      $('p:nth-last-child(3)').html(singleObject[2])
+      $('p:nth-last-child(4)').html(singleObject[3])
+      $('p:nth-last-child(5)').html(singleObject[4])
+      $('p:nth-last-child(6)').html(singleObject[5])
+      $('.singleItem:nth-last-child(1)').show()
+   }
+ }
 }
 
 const loadInventoryFailure = function () {
