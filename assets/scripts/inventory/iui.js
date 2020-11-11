@@ -35,9 +35,9 @@ const loadInventorySuccess = function (response) {
   console.log(responseArray[0].name)
   const responseArrayLength = response.items.length
 // create objects for each item in the response array
-for (let i = 0; i < response.items.length; i++) {
-      // define the clone unique id
-      const currentClone = 'clone' + i
+// for (let i = 0; i < responseArrayLength; i++) {
+//       // define the clone unique id
+      const currentClone = 'clone'
       // console.log(currentClone)
       // clone the single item div so the formatting is consistand and update/delete buttons are already there
       const mainContainer = $('.container')
@@ -46,11 +46,16 @@ for (let i = 0; i < response.items.length; i++) {
       // the example div is given a unique id so it's values can be replaced
       // this method clones the update and delete buttons so each item can have their own
       $('.singleItem').clone().prop('id', currentClone).appendTo(mainContainer)
+      // constructor function to fill cloned div with content
+      // function Row (name, department, quantity, cost, price, creator, age) {
+      //   this.
+      // }
       // select the newly cloned div so it can be populated
       const currentItem = document.getElementById(currentClone)
       console.log(currentItem)
-      console.log(currentItem.querySelector('.singleItemName'))
-      console.log(currentItem.querySelector('p:nth-child(0)'))
+      currentItem.querySelector('.singleItemName').innerHTML = responseArray[0].name
+      currentItem.querySelector('p:nth-child(2)').innerHTML = responseArray[0].name
+      
       // currentItem.querySelector('currentItem:nth-child(i)').innerHTML ='this'
       // $(`a:nth-child(${i})`)
       // // currentItem.querySelector('.singleItemName').val('this')
@@ -69,7 +74,7 @@ for (let i = 0; i < response.items.length; i++) {
       // $('p:nth-last-child(6)').html(singleObject[5])
       // $('.singleItem:nth-last-child(1)').show()
    }
- }
+ // }
 
 const loadInventoryFailure = function () {
   $('#masterLog').text('Inventory Refresh Failed')
