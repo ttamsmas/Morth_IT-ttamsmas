@@ -35,14 +35,13 @@ const loadInventorySuccess = function (response) {
   console.log(responseArray[0].name)
   const responseArrayLength = response.items.length
 // create objects for each item in the response array
-  const createNewItems = responseArray => {
-    for (let i = 0; i < responseArrayLength; i++) {
+for (let i = 0; i < response.items.length; i++) {
       // define the clone unique id
       const currentClone = 'clone' + i
-      console.log(currentClone)
+      // console.log(currentClone)
       // clone the single item div so the formatting is consistand and update/delete buttons are already there
       const mainContainer = $('.container')
-      console.log(mainContainer)
+      // console.log(mainContainer)
       // clone the example div and append it to the end of the container
       // the example div is given a unique id so it's values can be replaced
       // this method clones the update and delete buttons so each item can have their own
@@ -51,16 +50,17 @@ const loadInventorySuccess = function (response) {
       const currentItem = document.getElementById(currentClone)
       console.log(currentItem)
       console.log(currentItem.querySelector('.singleItemName'))
-      // currentItem.querySelector('.singleItemName').text('this')
-      currentItem.querySelector('.singleItemName').innerHTML ='this'
-      // currentItem.querySelector('.singleItemName').val('this')
-      console.log(currentItem.singleItemName)
-      console.log(currentItem.first)
-      console.log(currentItem.getElementById('currentClone'))
-      currentItem.singleItemName.innerHTML(responseArray[i].name)
-      console.log($('.container:nth-last-child'))
-      const thisItem = mainContainer.lastChildElement
-      console.log(thisItem)
+      console.log(currentItem.querySelector('p:nth-child(0)'))
+      // currentItem.querySelector('currentItem:nth-child(i)').innerHTML ='this'
+      // $(`a:nth-child(${i})`)
+      // // currentItem.querySelector('.singleItemName').val('this')
+      // console.log(currentItem.singleItemName)
+      // console.log(currentItem.first)
+      // console.log(currentItem.getElementById('currentClone'))
+      // currentItem.singleItemName.innerHTML(responseArray[i].name)
+      // console.log($('.container:nth-last-child'))
+      // const thisItem = mainContainer.lastChildElement
+      // console.log(thisItem)
       // $('p:nth-last-child(1)').html(singleObject[0])
       // $('p:nth-last-child(2)').html(singleObject[1])
       // $('p:nth-last-child(3)').html(singleObject[2])
@@ -70,8 +70,6 @@ const loadInventorySuccess = function (response) {
       // $('.singleItem:nth-last-child(1)').show()
    }
  }
- createNewItems()
-}
 
 const loadInventoryFailure = function () {
   $('#masterLog').text('Inventory Refresh Failed')
