@@ -26,6 +26,11 @@ div {
   width: 100vw;
 }
 
+p {
+  margin: 2px;
+  border: $alt-border;
+}
+
 .container {
   display: flex;
   align-content: stretch;

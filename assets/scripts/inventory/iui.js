@@ -6,6 +6,9 @@ const store = require('../store')
 const iapi = require('./iapi')
 // const inventoryRefresh = require('./inventory-refresh')
 
+const mainContainer = $('.container')
+const cloneContainer = $('.singleItem')
+
 const newItemSuccess = function (response) {
   $('#masterLog').text('New Item Succesfully Created')
 // clear input fields after success
@@ -40,27 +43,20 @@ for (let i = 0; i < responseArrayLength; i++) {
       const currentClone = 'clone' + i
 
       // clone the single item div so the formatting is consistand and update/delete buttons are already there
-      const mainContainer = $('.container')
-
-      // clone the example div and append it to the end of the container
-      // the example div is given a unique id so it's values can be replaced
+      // the clone div is given a unique id so it's html values can be replaced
       // this method clones the update and delete buttons so each item can have their own
-      $('.singleItem').clone().prop('id', currentClone).appendTo(mainContainer)
+      cloneContainer.clone().prop('id', currentClone).appendTo(mainContainer)
 
       // select the newly cloned div so it can be populated
       const currentItem = document.getElementById(currentClone)
 
-      const currentOne = responseArray[i]
-      console.log(currentOne)
-        .then(() => {
-          Object.keys(currentOne).forEach(key => {
-            const newP = document.createElement('p')
-            if (currentOne[key] !== null) {
-              newP.innerHTML = key + ': <br>' + currentOne[key]
-              currentItem.appendChild(newP)
-            } else {}
-          }
-        })
+      Object.keys(responseArray[i]).forEach(key => {
+        const newP = document.createElement('p')
+        if (responseArray[i][key] !== null) {
+          newP.innerHTML = key + ': <br>' + responseArray[i][key]
+          currentItem.appendChild(newP)
+        }
+      })
       // currentItem.querySelector('.singleItemName').innerHTML = responseArray[0].name
       // currentItem.querySelector('p:nth-child(2)').innerHTML = responseArray[0].name
       // currentItem.querySelector('currentItem:nth-child(i)').innerHTML ='this'
