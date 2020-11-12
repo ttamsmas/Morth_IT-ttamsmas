@@ -24,7 +24,6 @@ const newItemFailure = function (error) {
 
 const loadInventorySuccess = function (response) {
   $('#secondLog').text('Inventory Refreshed')
-
 // you have created an item or signed in and are getting a response array from the server
 // goal is to visualize the array as objects that can be manipulated by class
 // I think I can create a loop that adds divs within the container for each item in the array
@@ -56,6 +55,7 @@ for (let i = 0; i < responseArrayLength; i++) {
         const newP = document.createElement('p')
         if (responseArray[i][key] !== null) {
           newP.innerHTML = key + ': <br>' + responseArray[i][key]
+          newP.id = key + currentClone
           currentItem.appendChild(newP)
           // newP.class = responseArray[i][key]
         }

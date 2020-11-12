@@ -26,14 +26,18 @@ const onUpdateItem = function (event) {
   event.preventDefault()
   const form = event.target
   // pull the item id from the parent for update
-  // console.log(form.parentElement.id)
+  console.log(form.parentElement.id)
+  const parentId = form.parentElement.id
   const data = getFormFields(form)
+  const quantity = data.items.quantity
   const sendUpdate = {
     item: {
-      id: form.parentElement.id,
-      quantity: data.items.quantity
+      id: parentId,
+      quantity: quantity
     }
   }
+  const updateField = 'quantity' + parentId
+  document.getElementById(updateField).innerHTML = 'quantity: <br>' + quantity
   iapi.updateItem(sendUpdate)
     .then(iui.updateItemSuccess)
     .then(iapi.loadItems)
@@ -45,6 +49,7 @@ const onUpdateItem = function (event) {
 const onRemoveItem = function (event) {
   event.preventDefault()
   const form = event.target.parentElement.id
+  document.getElementById(form).remove()
   iapi.deleteItem(form)
     .then(iui.deleteItemSuccess)
     .then(iapi.loadItems)

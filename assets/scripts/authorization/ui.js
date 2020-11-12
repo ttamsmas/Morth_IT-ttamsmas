@@ -21,7 +21,7 @@ const signInSuccess = function (response) {
   store.user = response.user
   $('#change-password-form').show()
   $('#sign-out-form').show()
-  $('#new-item').show()
+  $('#inventoryFunctions').show()
   $('#sign-in-form').hide()
   $('#sign-up-form').hide()
   $('#sign-up-email').val('')
@@ -46,6 +46,7 @@ const updateFail = function () {
 
 const signOutSuccess = function (response) {
   $('#masterLog').text('Sign Out Successful, Please Sign In to Continue')
+  $('#secondLog').text('')
   $('#change-password-form').hide()
   $('#sign-out-form').hide()
   $('#sign-in-form').show()
@@ -55,7 +56,7 @@ const signOutSuccess = function (response) {
   $('#sign-up-email').val('')
   $('#sign-up-password').val('')
   $('#sign-up-password_confirmation').val('')
-  $('#inventory').hide()
+  $('#inventoryFunctions').hide()
   // clear user
   delete store.user
   $('.inventoryFunctions').hide()
