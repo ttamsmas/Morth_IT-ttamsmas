@@ -46,7 +46,7 @@ for (let i = 0; i < responseArrayLength; i++) {
       // clone the single item div so the formatting is consistand and update/delete buttons are already there
       // the clone div is given a unique id so it's html values can be replaced
       // this method clones the update and delete buttons so each item can have their own
-      cloneContainer.clone(true, true).prop('id', currentClone).appendTo(mainContainer).show()
+      cloneContainer.clone(true, true).prop('id', currentClone).appendTo(mainContainer)
 
       // select the newly cloned div so it can be populated
       const currentItem = document.getElementById(currentClone)
