@@ -13,5 +13,5 @@ $(() => {
   // inventory actions
   $('#new-item').on('submit', ievents.onNewItem)
   $('.update').on('submit', ievents.onUpdateItem)
-  $('#delete').on('submit', ievents.onRemoveItem)
+  $('.delete').on('submit', ievents.onRemoveItem)
 })

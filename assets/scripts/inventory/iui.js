@@ -23,7 +23,7 @@ const newItemFailure = function (error) {
 }
 
 const loadInventorySuccess = function (response) {
-  $('#masterLog').text('Inventory Refreshed')
+  $('#secondLog').text('Inventory Refreshed')
 
 // you have created an item or signed in and are getting a response array from the server
 // goal is to visualize the array as objects that can be manipulated by class

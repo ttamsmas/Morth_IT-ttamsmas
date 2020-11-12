@@ -24,22 +24,16 @@ const onNewItem = function (event) {
 
 const onUpdateItem = function (event) {
   event.preventDefault()
-  console.log(event.target)
   const form = event.target
   // pull the item id from the parent for update
-  console.log(form.parentElement.id)
+  // console.log(form.parentElement.id)
   const data = getFormFields(form)
-  console.log(data)
-  console.log(data.items.quantity)
   const sendUpdate = {
-    items: {
       item: {
         id: form.parentElement.id,
         quantity: data.items.quantity
-      },
-      over: 'false'
-    }
   }
+}
   iapi.updateItem(sendUpdate)
     .then(iui.updateItemSuccess)
     .then(iapi.loadItems)
@@ -50,16 +44,13 @@ const onUpdateItem = function (event) {
 
 const onRemoveItem = function (event) {
   event.preventDefault()
-  const form = event.target
-  const data = getFormFields(form)
-  console.log(data)
-  // console.log(data)
-  // iapi.newItem(data)
-  //   .then(iui.newItemSuccess)
-  //   .then(iapi.loadItems)
-  //     .then(iui.loadInventorySuccess)
-  //     .catch(iui.loadInventoryFailure)
-  //   .catch(iui.newItemFailure)
+  const form = event.target.parentElement.id
+  iapi.deleteItem(form)
+    .then(iui.deleteItemSuccess)
+    .then(iapi.loadItems)
+      .then(iui.loadInventorySuccess)
+      .catch(iui.loadInventoryFailure)
+    .catch(iui.deleteItemFailure)
 }
 
 module.exports = {

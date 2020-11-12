@@ -14,8 +14,9 @@ const newItem = function (data) {
 
 const updateItem = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/items/' + store.item,
+    url: config.apiUrl + '/items/' + data.item.id,
     headers: {'Authorization': 'Bearer ' + store.user.token},
+    cache: false,
     method: 'PATCH',
     data: data
   })
@@ -23,7 +24,7 @@ const updateItem = function (data) {
 
 const deleteItem = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/items/' + store.item,
+    url: config.apiUrl + '/items/' + data,
     headers: {'Authorization': 'Bearer ' + store.user.token},
     method: 'DELETE'
   })
@@ -42,5 +43,6 @@ const loadItems = function () {
 module.exports = {
   newItem,
   loadItems,
-  updateItem
+  updateItem,
+  deleteItem
 }
