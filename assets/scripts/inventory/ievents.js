@@ -24,21 +24,28 @@ const onNewItem = function (event) {
 
 const onUpdateItem = function (event) {
   event.preventDefault()
-  // console.log(event)
   console.log(event.target)
   const form = event.target
-  // console.log(event.currentTarget)
-  // console.log(form.parentElement)
-  // console.log(form.parentElement.id)
+  // pull the item id from the parent for update
+  console.log(form.parentElement.id)
   const data = getFormFields(form)
   console.log(data)
-  // console.log(data)
-  // iapi.newItem(data)
-  //   .then(iui.newItemSuccess)
-  //   .then(iapi.loadItems)
-  //     .then(iui.loadInventorySuccess)
-  //     .catch(iui.loadInventoryFailure)
-  //   .catch(iui.newItemFailure)
+  console.log(data.items.quantity)
+  const sendUpdate = {
+    items: {
+      item: {
+        id: form.parentElement.id,
+        quantity: data.items.quantity
+      },
+      over: 'false'
+    }
+  }
+  iapi.updateItem(sendUpdate)
+    .then(iui.updateItemSuccess)
+    .then(iapi.loadItems)
+      .then(iui.loadInventorySuccess)
+      .catch(iui.loadInventoryFailure)
+    .catch(iui.updateItemFailure)
 }
 
 const onRemoveItem = function (event) {

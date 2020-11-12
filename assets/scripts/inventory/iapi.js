@@ -11,24 +11,24 @@ const newItem = function (data) {
     data: data
   })
 }
-//
-// const updateItem = function (data) {
-//   return $.ajax({
-//     url: config.apiUrl + '/items/' + store.item,
-//     headers: {'Authorization': 'Bearer ' + store.user.token},
-//     method: 'PATCH',
-//     data: data
-//   })
-// }
-//
-// const deleteItem = function (data) {
-//   return $.ajax({
-//     url: config.apiUrl + '/items/' + store.item,
-//     headers: {'Authorization': 'Bearer ' + store.user.token},
-//     method: 'DELETE'
-//   })
-// }
-//
+
+const updateItem = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/items/' + store.item,
+    headers: {'Authorization': 'Bearer ' + store.user.token},
+    method: 'PATCH',
+    data: data
+  })
+}
+
+const deleteItem = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/items/' + store.item,
+    headers: {'Authorization': 'Bearer ' + store.user.token},
+    method: 'DELETE'
+  })
+}
+
 
 // AJAX Index / GET Request for item array
 const loadItems = function () {
@@ -41,5 +41,6 @@ const loadItems = function () {
 
 module.exports = {
   newItem,
-  loadItems
+  loadItems,
+  updateItem
 }
