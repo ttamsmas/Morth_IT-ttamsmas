@@ -4,7 +4,7 @@
 
 const store = require('../store')
 const iapi = require('./iapi')
-// const inventoryRefresh = require('./inventory-refresh')
+const ievents = require('./ievents')
 
 const mainContainer = $('.container')
 const cloneContainer = $('.singleItem')
@@ -33,19 +33,20 @@ const loadInventorySuccess = function (response) {
   //   for (let i = 0; i < response.length)
   // }
   // console.log(response.items)
+  // console.log(response.items[0].id)
   // console.log(response.items.length)
   const responseArray = response.items
   const responseArrayLength = responseArray.length
-  console.log(responseArrayLength)
+
 // create objects for each item in the response array
 for (let i = 0; i < responseArrayLength; i++) {
       // define the clone unique id
-      const currentClone = 'clone' + i
+      const currentClone = response.items[i].id
 
       // clone the single item div so the formatting is consistand and update/delete buttons are already there
       // the clone div is given a unique id so it's html values can be replaced
       // this method clones the update and delete buttons so each item can have their own
-      cloneContainer.clone().prop('id', currentClone).appendTo(mainContainer)
+      cloneContainer.clone(true, true).prop('id', currentClone).appendTo(mainContainer)
 
       // select the newly cloned div so it can be populated
       const currentItem = document.getElementById(currentClone)
@@ -55,27 +56,9 @@ for (let i = 0; i < responseArrayLength; i++) {
         if (responseArray[i][key] !== null) {
           newP.innerHTML = key + ': <br>' + responseArray[i][key]
           currentItem.appendChild(newP)
+          // newP.class = responseArray[i][key]
         }
       })
-      // currentItem.querySelector('.singleItemName').innerHTML = responseArray[0].name
-      // currentItem.querySelector('p:nth-child(2)').innerHTML = responseArray[0].name
-      // currentItem.querySelector('currentItem:nth-child(i)').innerHTML ='this'
-      // $(`a:nth-child(${i})`)
-      // // currentItem.querySelector('.singleItemName').val('this')
-      // console.log(currentItem.singleItemName)
-      // console.log(currentItem.first)
-      // console.log(currentItem.getElementById('currentClone'))
-      // currentItem.singleItemName.innerHTML(responseArray[i].name)
-      // console.log($('.container:nth-last-child'))
-      // const thisItem = mainContainer.lastChildElement
-      // console.log(thisItem)
-      // $('p:nth-last-child(1)').html(singleObject[0])
-      // $('p:nth-last-child(2)').html(singleObject[1])
-      // $('p:nth-last-child(3)').html(singleObject[2])
-      // $('p:nth-last-child(4)').html(singleObject[3])
-      // $('p:nth-last-child(5)').html(singleObject[4])
-      // $('p:nth-last-child(6)').html(singleObject[5])
-      // $('.singleItem:nth-last-child(1)').show()
    }
  }
 

@@ -12,7 +12,6 @@ $(() => {
   $('#sign-out-form').on('submit', events.onSignOut)
   // inventory actions
   $('#new-item').on('submit', ievents.onNewItem)
-  $('#getAll').on('click', iapi.loadItems)
-  // $('#update-item').on('submit', ievents.onUpdateItem)
-  // $('#delete-item').on('submit', ievents.onRemoveItem)
+  $('.update').on('submit', ievents.onUpdateItem)
+  $('#delete').on('submit', ievents.onRemoveItem)
 })

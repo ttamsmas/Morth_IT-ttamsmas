@@ -78,10 +78,16 @@
           </form>
         <div class='container'>
           <div class='singleItem'>
-            <form>
-              <input class="update-item-quantity" type="number" name="items[quantity]" placeholder="update qty">
-              <input class="update-item" type="submit" value="Update">
-              <input clss="delete-item" type="submit" value="Delete">
+            <form class='delete'>
+              <fieldset>
+                <input clss="delete-item" type="submit" value="Delete">
+              </fieldset>
+            </form>
+            <form class ="update">
+              <fieldset>
+                <input class="update-item-quantity" type="number" name="items[quantity]" placeholder="update qty">
+                <input class="update-item" type="submit" value="Update">
+              </fieldset
             </form>
           </div>
         </div>

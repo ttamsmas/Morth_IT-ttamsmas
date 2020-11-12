@@ -22,9 +22,41 @@ const onNewItem = function (event) {
     .catch(iui.newItemFailure)
 }
 
-module.exports = {
-  onNewItem
-  // onUpdateItem,
-  // onRemoveItem,
+const onUpdateItem = function (event) {
+  event.preventDefault()
+  // console.log(event)
+  console.log(event.target)
+  const form = event.target
+  // console.log(event.currentTarget)
+  // console.log(form.parentElement)
+  // console.log(form.parentElement.id)
+  const data = getFormFields(form)
+  console.log(data)
+  // console.log(data)
+  // iapi.newItem(data)
+  //   .then(iui.newItemSuccess)
+  //   .then(iapi.loadItems)
+  //     .then(iui.loadInventorySuccess)
+  //     .catch(iui.loadInventoryFailure)
+  //   .catch(iui.newItemFailure)
 }
-// make a temporary index button and link to API before connecting to sign in or new item
+
+const onRemoveItem = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  console.log(data)
+  // console.log(data)
+  // iapi.newItem(data)
+  //   .then(iui.newItemSuccess)
+  //   .then(iapi.loadItems)
+  //     .then(iui.loadInventorySuccess)
+  //     .catch(iui.loadInventoryFailure)
+  //   .catch(iui.newItemFailure)
+}
+
+module.exports = {
+  onNewItem,
+  onUpdateItem,
+  onRemoveItem,
+}
