@@ -13,7 +13,7 @@ const onNewItem = function (event) {
   console.log(data)
   data.item.owner = store.user
   data.item.dateCreated = new Date()
-  // console.log(data)
+  console.log(data)
   iapi.newItem(data)
     .then(iui.newItemSuccess)
     .then(iapi.loadItems)
@@ -29,11 +29,11 @@ const onUpdateItem = function (event) {
   // console.log(form.parentElement.id)
   const data = getFormFields(form)
   const sendUpdate = {
-      item: {
-        id: form.parentElement.id,
-        quantity: data.items.quantity
+    item: {
+      id: form.parentElement.id,
+      quantity: data.items.quantity
+    }
   }
-}
   iapi.updateItem(sendUpdate)
     .then(iui.updateItemSuccess)
     .then(iapi.loadItems)

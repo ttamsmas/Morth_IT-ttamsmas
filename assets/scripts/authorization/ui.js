@@ -58,6 +58,7 @@ const signOutSuccess = function (response) {
   $('#inventory').hide()
   // clear user
   delete store.user
+  $('.inventoryFunctions').hide()
 }
 
 module.exports = {
