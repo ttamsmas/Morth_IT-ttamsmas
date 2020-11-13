@@ -3,7 +3,6 @@
 const getFormFields = require('./../../../lib/get-form-fields')
 const ui = require('./ui')
 const api = require('./api')
-const store = require('./../store')
 const iui = require('./../inventory/iui')
 const iapi = require('./../inventory/iapi')
 
@@ -28,8 +27,7 @@ const onSignIn = function (event) {
   api.signIn(data)
     .then(ui.signInSuccess)
     .then(iapi.loadItems)
-      .then(iui.loadInventorySuccess)
-      .catch(iui.loadInventoryFailure)
+    .then(iui.loadInventorySuccess)
     .catch(ui.signInFailure)
 }
 

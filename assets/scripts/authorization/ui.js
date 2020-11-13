@@ -1,7 +1,6 @@
 'use strict'
 
 const store = require('../store.js')
-const iapi = require('../inventory/iapi')
 
 const signUpSuccess = function (response) {
   $('#masterLog').text('You have Been Signed Up ' + response.user.email)
@@ -21,7 +20,6 @@ const signInSuccess = function (response) {
   store.user = response.user
   $('#change-password-form').show()
   $('#sign-out-form').show()
-  $('#inventoryFunctions').show()
   $('#sign-in-form').hide()
   $('#sign-up-form').hide()
   $('#sign-up-email').val('')

@@ -17,8 +17,7 @@ const onNewItem = function (event) {
   iapi.newItem(data)
     .then(iui.newItemSuccess)
     .then(iapi.loadItems)
-      .then(iui.loadInventorySuccess)
-      .catch(iui.loadInventoryFailure)
+    .then(iui.loadInventorySuccess)
     .catch(iui.newItemFailure)
 }
 
@@ -36,30 +35,25 @@ const onUpdateItem = function (event) {
       quantity: quantity
     }
   }
-  const updateField = 'quantity' + parentId
-  document.getElementById(updateField).innerHTML = 'quantity: <br>' + quantity
   iapi.updateItem(sendUpdate)
     .then(iui.updateItemSuccess)
     .then(iapi.loadItems)
-      .then(iui.loadInventorySuccess)
-      .catch(iui.loadInventoryFailure)
+    .then(iui.loadInventorySuccess)
     .catch(iui.updateItemFailure)
 }
 
 const onRemoveItem = function (event) {
   event.preventDefault()
   const form = event.target.parentElement.id
-  document.getElementById(form).remove()
   iapi.deleteItem(form)
     .then(iui.deleteItemSuccess)
     .then(iapi.loadItems)
-      .then(iui.loadInventorySuccess)
-      .catch(iui.loadInventoryFailure)
+    .then(iui.loadInventorySuccess)
     .catch(iui.deleteItemFailure)
 }
 
 module.exports = {
   onNewItem,
   onUpdateItem,
-  onRemoveItem,
+  onRemoveItem
 }
