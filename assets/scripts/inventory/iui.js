@@ -22,13 +22,7 @@ const loadInventorySuccess = function (response) {
   // you have created an item or signed in and are getting a response array from the server
   // goal is to visualize the array as objects that can be manipulated by class
   // I think I can create a loop that adds divs within the container for each item in the array
-  // How to include update and delete TBD
-  // const tempItem = function (response) {
-  //   for (let i = 0; i < response.length)
-  // }
-  // console.log(response.items)
-  // console.log(response.items[0].id)
-  // console.log(response.items.length)
+
   // first clear the container of the old objects
   $('.container').empty()
 

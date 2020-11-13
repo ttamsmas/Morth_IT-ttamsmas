@@ -37,7 +37,7 @@ const onUpdatePassword = function (event) {
   const data = getFormFields(form)
   api.updatePassword(data)
     .then(ui.updateSucces)
-    .catch(ui.updateFailure)
+    .catch(ui.updateFail)
 }
 
 const onSignOut = function (event) {
