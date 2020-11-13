@@ -22,7 +22,7 @@ const signIn = function (data) {
 const updatePassword = function (data) {
   return $.ajax({
     url: config.apiUrl + '/change-password',
-    headers: {'Authorization': 'Bearer ' + store.user.token},
+    headers: { Authorization: 'Bearer ' + store.user.token },
     method: 'PATCH',
     data: data
   })
@@ -31,7 +31,7 @@ const updatePassword = function (data) {
 const signOut = function (data) {
   return $.ajax({
     url: config.apiUrl + '/sign-out',
-    headers: {'Authorization': 'Bearer ' + store.user.token},
+    headers: { Authorization: 'Bearer ' + store.user.token },
     method: 'DELETE'
   })
 }

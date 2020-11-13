@@ -50,9 +50,9 @@ const loadInventorySuccess = function (response) {
     // select the newly cloned div so it can be populated
     const currentItem = document.getElementById(currentClone)
 
+    // loop through each object in the array and create P elements for select fields
     Object.keys(responseArray[i]).forEach(key => {
       const newP = document.createElement('p')
-      console.log(responseArray[i].key)
       if (key === 'owner' || key === 'price' || key === 'quantity' || key === 'cost' || key === 'department' || key === 'name') {
         newP.innerHTML = key + ': <br>' + responseArray[i][key]
         newP.id = key + currentClone
@@ -81,7 +81,7 @@ const deleteItemSuccess = function () {
 }
 
 const deleteItemFailure = function () {
-  $('#masterLog').text('Deletion Failed, Try Again')
+  $('#masterLog').text('Deletion Failed, Are You the Item Owner')
 }
 
 module.exports = {

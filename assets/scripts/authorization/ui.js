@@ -16,7 +16,8 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (response) {
-  $('#masterLog').text('Thanks for signing in! ' + response.user.email)
+  console.log(response.user)
+  $('#masterLog').text('Thanks for signing in! Your User ID: ' + response.user._id)
   store.user = response.user
   $('#change-password-form').show()
   $('#sign-out-form').show()
