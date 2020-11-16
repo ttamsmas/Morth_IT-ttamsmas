@@ -26,6 +26,8 @@ const signInSuccess = function (response) {
   $('#sign-up-password').val('')
   $('#sign-up-password_confirmmation').val('')
   $('.inventoryFunctions').show()
+  $('#old-password').text('')
+  $('#new-password_confirmmation').text('')
 }
 
 const signInFailure = function () {
@@ -40,6 +42,8 @@ const updateSucces = function () {
 
 const updateFail = function () {
   $('#masterLog').text('Update Password Failed, Please Try Again')
+  $('#old-password').val('')
+  $('#new-password_confirmmation').val('')
 }
 
 const signOutSuccess = function (response) {
