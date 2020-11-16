@@ -1,21 +1,33 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 
-$alt-color: $cyan;
-$bg-color: #B0F9F6;
-$font-color: #581845;
+$alt-color: #C70039;
+$bg-color: #FFC300;
+$font-color: #DAF7A6;
+$table-font-color: #900C3F;
 $border-color: 1px #000000 double;
-$font-outline: #DDDDE3;
+$font-outline: #DAF7A6;
 $cell-dimensions: 98vw;
 $text-shadow: -1px -1px 0 $font-outline, 1px -1px 0  $font-outline, -1px 1px 0  $font-outline, 1px 1px 0  $font-outline;
 $alt-border: 1px #7175F4 solid;
 $alt-bg-color: #060A6E;
+$header-color: #581845;
+$background-color: #581845;
+$button-background: #900C3F;
+$button-font: #FFC300;
+
+body {
+    background: $background-color;
+    color: $font-color;
+}
 
 h1  {
-  margin: 0 auto;
-  padding: 0 auto;
-  color: $font-color;
-  text-align: center;
+  margin: 3px 0;
+  padding: 0;
+  color: $header-color;
+  text-align: left;
   text-shadow: $text-shadow;
+  font-family: 'Bungee Shade', cursive;
 }
 
 div {
@@ -44,16 +56,16 @@ div {
   display: flex;
   flex-flow: column;
   align-items: stretch;
-  margin: 0 auto;
-  padding: 0 auto;
+  margin: 0;
+  padding: 0;
   width: 100%;
+  text-align: left;
 }
 
 .singleItem {
   display: flex;
   background: $bg-color;
-  border: $border-color;
-  color: black;
+  color: $table-font-color;
   margin: 3px auto 0 auto;
   padding: 0 auto;
   width: 100%;
@@ -66,15 +78,8 @@ div {
 }
 
 p {
-  border: $alt-border;
   padding: 3px;
-  background: $font-outline;
-  opacity: 80%;
   margin: 0 auto;
-}
-
-#title {
-  border-bottom: $border-color;
 }
 
 #communication {
@@ -92,12 +97,21 @@ p {
   width: $cell-dimensions;
 }
 
-#secondLog {
+#new-item, #masterLog {
+  margin: 0 0 0 10px;
+  font-size: 16px;
+  text-align: left;
+}
+
+#secondLog, #masterLog {
   border: none;
   background: none;
   margin: 0 0 0 10px;
+  text-align: center;
 }
 
-#new-item, #masterLog {
-  margin: 0 0 0 10px;
+.update-item, .delete-item, .auth-button, #createItemButton {
+  background: $button-background;
+  color: $button-font;
+  margin: 2px;
 }
