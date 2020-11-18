@@ -59,6 +59,10 @@ const signOutSuccess = function (response) {
   $('#sign-up-password').val('')
   $('#sign-up-password_confirmation').val('')
   $('#inventoryFunctions').hide()
+  $('#new-item-name').val('')
+  $('#new-item-department').val('')
+  $('#new-item-quantity').val('')
+  $('#new-item-cost').val('')
   // clear user
   delete store.user
   $('.inventoryFunctions').hide()
