@@ -15,6 +15,10 @@ const newItemSuccess = function (response) {
 
 const newItemFailure = function () {
   $('#masterLog').text('New Item Failure, Try Again')
+  $('#new-item-name').val('')
+  $('#new-item-department').val('')
+  $('#new-item-quantity').val('')
+  $('#new-item-cost').val('')
 }
 
 const loadInventorySuccess = function (response) {
@@ -65,18 +69,34 @@ const loadInventoryFailure = function () {
 
 const updateItemSuccess = function (response) {
   $('#masterLog').text('Update Success')
+  $('#new-item-name').val('')
+  $('#new-item-department').val('')
+  $('#new-item-quantity').val('')
+  $('#new-item-cost').val('')
 }
 
 const updateItemFailure = function () {
   $('#masterLog').text('Update Failed, Are You the Owner?')
+  $('#new-item-name').val('')
+  $('#new-item-department').val('')
+  $('#new-item-quantity').val('')
+  $('#new-item-cost').val('')
 }
 
 const deleteItemSuccess = function () {
   $('#masterLog').text('Item Deleted')
+  $('#new-item-name').val('')
+  $('#new-item-department').val('')
+  $('#new-item-quantity').val('')
+  $('#new-item-cost').val('')
 }
 
 const deleteItemFailure = function () {
   $('#masterLog').text('Deletion Failed, Are You the Item Owner')
+  $('#new-item-name').val('')
+  $('#new-item-department').val('')
+  $('#new-item-quantity').val('')
+  $('#new-item-cost').val('')
 }
 
 module.exports = {
