@@ -50,6 +50,7 @@ const loadInventorySuccess = function (response) {
       if (key === 'owner' || key === 'price' || key === 'quantity' || key === 'cost' || key === 'department' || key === 'name') {
         newP.innerHTML = key + ': <br>' + responseArray[i][key]
         newP.id = key + currentClone
+        newP.class = 'container-fluid'
         currentItem.appendChild(newP)
         // newP.class = responseArray[i][key]
       }
