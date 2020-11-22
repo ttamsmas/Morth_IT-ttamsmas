@@ -76,11 +76,13 @@ div {
   align-content: center;
   justify-content: space-between;
   flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 p {
   padding: 3px;
   margin: 0 auto;
+  font-size: 1vw;
 }
 
 #communication {
