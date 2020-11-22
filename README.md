@@ -1,7 +1,8 @@
 # Morth_IT-ttamsmas
 
-Morth Inventory Tracking: MongoDB Server Connected to Inventory Tracking SPA
-=======================
+---
+
+#### Morth Inventory Tracking: MongoDB Server Connected to Inventory Tracking SPA
 
 This SPA was created to reflect a functional inventory summary module within a traditional Point of Sale System.
 
