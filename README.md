@@ -86,4 +86,4 @@ Users are unable to update inventory item fields outside of on hand quantity. Th
 
 ## Planning Wireframes & Entity Relationship Diagram
 
-[Point of Sale wireframe](https://imgur.com/a/nMBNJa6)
+[Point of Sale Wireframe](https://imgur.com/a/nMBNJa6)
